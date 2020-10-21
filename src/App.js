@@ -1,26 +1,63 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import {
+	faClock,
+	faSearch,
+	faSortDown,
+	faBars,
+	faQuestionCircle,
+	faCog,
+	faTh,
+	faPlus,
+	faStar,
+	faChevronRight,
+	faPlane,
+	faRecycle,
+	faEllipsisV,
+	faChevronDown,
+	faCalendar,
+	faStickyNote,
+	faFile,
+	faInbox,
+	faPrint,
+	faShare,
+	faBackward,
+} from '@fortawesome/free-solid-svg-icons';
+import { MessageProvider } from './MessageContext';
+import Inbox from './Inbox';
+library.add(
+	faClock,
+	faSearch,
+	faSortDown,
+	faBars,
+	faQuestionCircle,
+	faCog,
+	faTh,
+	faPlus,
+	faStar,
+	faChevronRight,
+	faPlane,
+	faRecycle,
+	faEllipsisV,
+	faChevronDown,
+	faCalendar,
+	faStickyNote,
+	faFile,
+	faInbox,
+	faPrint,
+	faShare,
+	faBackward
+);
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => {
+	return (
+		<MessageProvider>
+			<div className='App'>
+				<Inbox />
+			</div>
+		</MessageProvider>
+	);
+};
 
 export default App;
